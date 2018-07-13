@@ -10,7 +10,7 @@
  * San Francisco, California, 94105, USA.                               *
  *----------------------------------------------------------------------*/
 
-#include <Time.h>        //http://www.arduino.cc/playground/Code/Time
+#include <TimeLib.h>        //Use this library https://github.com/PaulStoffregen/Time
 #include <Ethernet.h>
 #include <EthernetUdp.h>
 #include <simpleNTP.h>
@@ -22,6 +22,7 @@ byte ip[] = {192, 168, 1, 179};
 void setup()
 {
   Ethernet.begin(mac, ip);
+  // Ethernet.begin(mac);  //For DHCP
   delay(500);
   Serial.begin(9600);
   Serial.println("Requesting Time...");
